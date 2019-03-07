@@ -5,7 +5,9 @@ html, body {
 }
 
 body {
-  background-color: darkgreen;
+  background-image: url('../imgs/background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
   /* cursor: url(../imgs/circle.png), cell; */
 }
 
@@ -17,37 +19,145 @@ body {
 
 #blue-container {
   position: absolute;
-  display: flex;
-  align-items: center;
-  background-color: aqua;
   height: 100%;
   width: 100%;
 }
 
 #gray-container {
   position: absolute;
-  background-color: gray;
   height: 100%;
   width: 100%;
 }
 
 #yellow-container {
   position: absolute;
-  background-color: yellow;
   height: 100%;
   width: 100%;
 }
 
 .square-dude {
-  position: relative;
+  position: absolute;
+  bottom: 10vh;
+  left: 200px;
   width: 100px;
   height: 100px;
   border: 3px solid white;
-  z-index: 2;
+  background-color: red;
+  z-index: 4;
 }
 
 #block {
     padding: 10px;
     border: 1px solid black;
     font-family: Helvetica;
+}
+
+.door {
+  position: absolute;
+  right: 5vw;
+  bottom: 10vh;
+}
+
+.door img {
+  height: 30vh;
+  width: auto;
+}
+
+.lever-test {
+  background-image: url(../imgs/tree.jpg);
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
+.ground {
+  background-color: saddlebrown;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 10vh;
+  width: 100vw;
+  z-index: 5;
+}
+
+.grass-foreground, .grass-background{
+  position: absolute;
+  background-position: bottom;
+  left: 0;
+  bottom: 10vh;
+  height: 50px;
+  width: 100vw;
+}
+
+ .trees-foreground, .trees-background{
+   position: absolute;
+   background-position: bottom;
+   left: 0;
+   bottom: -20vh;
+   height: 120vh;
+   width: 100vw;
+ }
+
+.grass-foreground {
+  background-image: url("../imgs/foreground-grass.png");
+  z-index: 10;
+
+}
+
+.grass-background {
+  background-image: url("../imgs/background-grass.png");
+  z-index: 3;
+}
+
+.trees-background{
+  background-image: url('../imgs/background-trees.png');
+  background-repeat: repeat-x;
+  z-index: -10;
+}
+
+.trees-foreground{
+  background-image: url('../imgs/foreground-trees.png');
+  z-index: -5;
+}
+
+.stone-tv {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}
+
+.stone {
+  width: 500px;
+  z-index: 2;
+}
+
+.television {
+
+    position: absolute;
+    left: 50%;
+    bottom: 40%;
+    transform: translateX(-50%);
+    width: 250px;
+    border-radius: 10px;
+    background-image: url(../imgs/tv-background.png);
+    background-size: 1000px;
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
+.lever {
+  position: absolute;
+  z-index: -1;
+  right: 0px;
+  bottom: 30%;
+  transform: rotateY(180deg) rotate(-30deg);
+  transform-origin: bottom center;
+  width: 50px;
+  -webkit-transition: transform;
+  -o-transition: transform;
+  transition: transform;
+  transition-duration: 1s;
+}
+
+.active{
+  transform: rotateY(180deg) rotate(-90deg);
 }
